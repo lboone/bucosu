@@ -1,0 +1,139 @@
+#read_only_message,
+div#bcs_event_question_content_container .section-divider,
+div#bottom_of_form_controlls
+{
+	display:none;
+}
+
+#bcs_questions_form_container{
+	padding-top:30px;
+}
+
+#bcs_questions_form_container form .section{
+	margin-bottom:5px;
+}
+
+#bcs_questions_form_container form .section.row{
+	margin-bottom:15px !important;
+}
+
+#bcs_event_question_content_container .container-fluid.container-xl{
+	margin-right:inherit;
+	margin-left:inherit;
+}
+
+#bcs_event_question_content_container {
+	max-width:100%;
+}
+
+.mfp-content{
+	text-align: center !important;
+}
+
+
+#magnificPopupNewProject{
+	display: inline-block; 
+	vertical-align: middle; 
+	white-space: normal; 
+	text-align:center; 
+	font-size:18px; 
+	font-weight: bolder; 
+	font-color:white;
+}
+
+#magnificPopupNewProjectImg{
+    width: 120px;
+    height: 120px;
+}
+
+span.caption {
+    display: block;
+}
+
+.admin-form .gui-textarea[disabled],
+.admin-form .gui-input[disabled]
+{
+	background-color: white !important;
+	color: black !important;
+	opacity: 1 !important;
+}
+.admin-form input[disabled]~.field-icon i,
+.admin-form textarea[disabled]~.field-icon i{
+	opacity: 1 !important;
+}
+
+#new_project_check_button{
+	height: 68px !important;
+	margin-top: -25px;
+	margin-right: -25px;
+	margin-bottom: -18px;
+	margin-left: 20px;
+	padding-top: 24px;
+	padding-right: 30px;
+	padding-bottom: 18px;
+	padding-left: 40px;
+	background-color: #eee;
+	border: 2px solid #eee;
+	border-left: 1px solid;
+}
+
+
+
+.spacer5 {   height: 5px;   width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer10 {  height: 10px;  width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer15 {  height: 15px;  width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer20 {  height: 20px;  width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer25 {  height: 25px;  width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer30 {  height: 30px;  width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer35 {  height: 35px;  width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer40 {  height: 40px;  width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer45 {  height: 45px;  width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer50 {  height: 50px;  width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer100 { height: 100px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer200 { height: 200px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+
+/* Give ability to change the icon color */
+.fa.fa-default 	{ color: #F2F2F2; }
+.fa.fa-dark 	{ color: #2E313D; }
+.fa.fa-primary 	{ color: #3078D7; }
+.fa.fa-success 	{ color: #5BC24C; }
+.fa.fa-info		{ color: #27A2CF; }
+.fa.fa-warning	{ color: #F5B025; }
+.fa.fa-danger 	{ color: #E63F24; }
+.fa.fa-alert 	{ color: #8362D6; }
+.fa.fa-system	{ color: #30A487; }
+
+.project_question_result_heading{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	flex-wrap: wrap;
+	align-items: flex-end;
+}
+.project_question_result_title{
+	flex-grow: 1;
+}
+
+
+#view_projects_table .sorting_disabled{
+	background-color: rgba(0, 0, 0, 0) !important;
+}
+
+@media only screen and (max-width: 650px) {
+  #view_projects_table_filter { display: none; }
+}
+
+
+div#headingOne.panel-heading,
+div#headingTwo.panel-heading {
+	padding: 10px 11px 9px !important;
+}
+
+div#headingOne.panel-heading h4,
+div#headingTwo.panel-heading h4{
+	font-size: 14px !important;
+	font-weight: 600 !important; 
+}

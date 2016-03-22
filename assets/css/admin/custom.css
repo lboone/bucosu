@@ -1,0 +1,219 @@
+body.external-page.external-alt #main {
+	background-color: #acb9a0 !important;
+}
+
+.eventTreeForceHideElement {
+	display:none;
+	visibility: hidden;
+}
+
+#bcs_event_question_content{
+	position: relative !important;
+	height: 100%;
+	width: 100%;
+	padding: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+
+#bcs_event_question_overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	background: url('../../img/overlay/overlay1.png') repeat 0 0;
+	display: none;
+	text-align: center;
+}
+
+#bcs_event_question_overlay_panel{
+	margin: auto auto 0 auto;
+	width: 80%;
+	background: rgba(206, 241, 232, 0.75);
+	z-index: 10001;	
+	padding:20px;
+}
+
+#bcs_event_question_overlay_panel h2 {
+	margin-top: auto;
+}
+
+#bcs_event_question_content_container {
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+
+form#profiles_school_form_1 input#new_profile_school_new_button,
+form#profiles_school_form_1 button#new_profile_school_new_button {
+	display:none;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+span.fancytree-node.fancytree-folder.fancytree-exp-n.fancytree-ico-cf {
+	display:none;
+	visibility:hidden;
+}
+
+
+.dd-nodrag{
+	cursor:default !important;
+}
+
+.custom-progress-bar-label{
+	display: block;
+	float: left;
+	font-size: 10px;
+	margin-right: 5px;
+	padding-right: 5px;
+	width:25px;
+	line-height: 10px;
+}
+
+
+.tab_alert_counter{
+	display: inline-table;
+	margin-top: -6px;
+	padding-left:0px;
+}
+
+
+div#map_canvas3.map{
+	height: 370px !important;
+}
+
+@media all {
+	.page-break{
+		display: none;
+	}
+}
+
+@media print{
+	#content_wrapper{
+		margin-left: 0px !important;
+		padding-top: 0px !important;
+	}
+	#event_school_profile #dialog{
+		display:none;
+	}
+	#event_school_profile #nestable-menu{
+		display:none;
+	}
+
+	#bcs-event-invoice-panel{
+		height:1px !important;
+	}
+
+	.avoid-page-break-inside{
+		page-break-inside: avoid;
+	}
+	.page-break{
+		display: block; 
+		page-break-before: always; 
+	}
+	body{
+		font-family: Arial;
+		font-size: 12px !important;
+	}
+}
+
+.spacer5 { height: 5px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer10 { height: 10px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer15 { height: 15px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer20 { height: 20px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer25 { height: 25px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer30 { height: 30px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer35 { height: 35px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer40 { height: 40px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer45 { height: 45px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer50 { height: 50px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer100 { height: 100px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer200 { height: 200px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+
+
+.wrap {
+  overflow: hidden;
+  margin: 10px;
+}
+.box {
+  float: left;
+  position: relative;
+  width: 20%;
+  padding-bottom: 20%;
+}
+.boxInner {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+  overflow: hidden;
+}
+.boxInner img {
+  width: 100%;
+}
+.boxInner .titleBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: -50px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  padding: 10px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+tr.no-touch .boxInner:hover .titleBox, tr.touch .boxInner.touchFocus .titleBox {
+  margin-bottom: 0;
+}
+@media only screen and (max-width : 480px) {
+  /* Smartphone view: 1 tile */
+  .box {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+  /* Tablet view: 2 tiles */
+  .box {
+    width: 50%;
+    padding-bottom: 50%;
+  }
+}
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+  /* Small desktop / ipad view: 3 tiles */
+  .box {
+    width: 33.3%;
+    padding-bottom: 33.3%;
+  }
+}
+@media only screen and (max-width : 1290px) and (min-width : 1051px) {
+  /* Medium desktop: 4 tiles */
+  .box {
+    width: 25%;
+    padding-bottom: 25%;
+  }
+}
+
+@media only print {
+	.box {
+		width: 33.3%;
+		padding-bottom: 33.3%;
+	}
+}
+
+/*
+ * Write classes that will hide/show content based on user being logged in or not.
+ */

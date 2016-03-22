@@ -1,0 +1,41 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<?php
+class Bcs_events_school extends Authorized_Controller {
+
+	public function __construct(){
+		parent::__construct();
+
+	/*
+	 * -------------------------
+	 * Load the model for the matching controller
+	 * -------------------------
+	 */
+		$this->load->model('mdl_bcs_events_school');
+	}
+
+	public function all_by_school_district_event($event_id)
+	{
+		$param = array('event_school_district_id'=>$event_id, 'active'=>'1');
+		$result = $this->mdl_bcs_events_school->get_by($param);
+		return $result;
+	}
+
+	public function all_by_school_district_event_json($event_id)
+	{
+		echo json_encode($this->all_by_school_district_event($event_id));
+	}
+
+
+	public function all_by_school_district_event_input_options($event_id)
+	{
+		$results = $this->all_by_school_district_event($event_id);
+		if (isset($results)) {
+			foreach ($results as $result) {
+				echo '<option name="bcs_events_school" value="' . $result->id. '">' . $result->school_name . '</option>';
+			}
+		} else {
+			echo '<option name="bcs_events_school" value="">This District has no school events...</option>';
+		}
+	}
+
+}
