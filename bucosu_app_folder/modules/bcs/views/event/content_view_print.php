@@ -16,9 +16,10 @@
 	              </div>
 	            </div>
 
-	            <pre>
-		            <?php print_r(json_encode($bcs_headings)); ?>
-	            </pre>
+
+	            <!--<pre>
+		            <?php //print_r(json_encode($bcs_headings)); ?>
+	            </pre>-->
 
 				<?php foreach ($bcs_headings as $bcs_heading_title => $bcs_heading): ?>
 					<div class="row" id="<?php echo(strtoupper($bcs_heading['slug'])); ?>">

@@ -115,31 +115,31 @@
                     </td>
                     
                     <?php if ($issue['U'] > 0): ?>
-                        <td><a href=""><?php echo $issue['U']; ?></a></td>  
+                        <td><a href="http://bucosu.com/bcs/event_issues/<?php echo $issue['event_sd_id'];?>/<?php echo $issue['event_school_id'];?>/u/images"><?php echo $issue['U']; ?></a></td>  
                     <?php else: ?>
                         <td><?php echo $issue['U']; ?></td>
                     <?php endif ?>
                     
                     <?php if ($issue['P'] > 0): ?>
-                        <td><a href=""><?php echo $issue['P']; ?></a></td>  
+                        <td><a href="http://bucosu.com/bcs/event_issues/<?php echo $issue['event_sd_id'];?>/<?php echo $issue['event_school_id'];?>/p/images"><?php echo $issue['P']; ?></a></td>  
                     <?php else: ?>
                         <td><?php echo $issue['P']; ?></td>
                     <?php endif ?>
 
                     <?php if ($issue['N'] > 0): ?>
-                        <td><a href=""><?php echo $issue['N']; ?></a></td>  
+                        <td><a href="http://bucosu.com/bcs/event_issues/<?php echo $issue['event_sd_id'];?>/<?php echo $issue['event_school_id'];?>/n/images"><?php echo $issue['N']; ?></a></td>  
                     <?php else: ?>
                         <td><?php echo $issue['N']; ?></td>
                     <?php endif ?>
 
                     <?php if ($issue['C'] > 0): ?>
-                        <td><a href=""><?php echo $issue['C']; ?></a></td>  
+                        <td><a href="http://bucosu.com/bcs/event_issues/<?php echo $issue['event_sd_id'];?>/<?php echo $issue['event_school_id'];?>/c/images"><?php echo $issue['C']; ?></a></td>  
                     <?php else: ?>
                         <td><?php echo $issue['C']; ?></td>
                     <?php endif ?>
 
                     <?php if ($issue['issues_total'] > 0): ?>
-                        <td><a href=""><?php echo $issue['issues_total']; ?></a></td>  
+                        <td><a href="http://bucosu.com/bcs/event_issues/<?php echo $issue['event_sd_id'];?>/<?php echo $issue['event_school_id'];?>/all/images"><?php echo $issue['issues_total']; ?></a></td>  
                     <?php else: ?>
                         <td><?php echo $issue['issues_total']; ?></td>
                     <?php endif ?>
