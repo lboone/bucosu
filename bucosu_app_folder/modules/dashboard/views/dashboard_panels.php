@@ -39,7 +39,11 @@
                   <tr>
                     <td><?php echo $x . "."; ?></td>
                     <td><a href="http://bucosu.com/bcs/event/<?php echo $cost['event_sd_id'];?>/<?php echo $cost['event_school_id'];?>"><?php echo $cost['school_name']; ?></a></td>
-                    <td><?php echo $cost['estimated_cost']; ?></td>
+                    <?php if ($cost['estimated_cost'] == '$0'): ?>
+                      <td><?php echo $cost['estimated_cost']; ?></td>
+                    <?php else: ?>
+                      <td><a href="http://bucosu.com/bcs/event_costs/<?php echo $cost['event_sd_id'];?>/<?php echo $cost['event_school_id'];?>/sum/images"><?php echo $cost['estimated_cost']; ?></a></td>
+                    <?php endif ?>
                   </tr> 
                   <?php $x = $x + 1; ?>                   		
               	<?php endforeach ?>

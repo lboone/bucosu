@@ -53,141 +53,96 @@ class Bcs extends Authorized_Controller {
 	}
 
 	public function event($esd = null, $es = null, $cmd = null, $show_images = null){
+		$this->_processAnEvent("event",$esd,$es,$cmd,$show_images);
+	}
 
-		if (!$esd || !$es) {
-			$this->_show_401();
-		}
-
-		$esd_name = null;
-		$es_name = null;
-
-
-		$this->load->model('bcs_events_school_district/Mdl_bcs_events_school_district');
-		$rslt = $this->Mdl_bcs_events_school_district->get($esd);
-		if (!$rslt) {
-			$this->_show_401();
-		} else {
-			$esd_name = $rslt->school_district;
-		}
-
-		$this->load->model('bcs_events_school/Mdl_bcs_events_school');
-		$rslt = $this->Mdl_bcs_events_school->get($es);
-		if (!$rslt) {
-			$this->_show_401();
-		} else {
-			$es_name = $rslt->school_name;
-		}		
-
-		$this->data['title'] = $esd_name . ' / ' . $es_name;
-
-
-		
-		$this->data['stylesheets']['top']['custom'] 					= get_css('assets/css/admin/custom.css');
-		/*
-		$this->data['stylesheets']['top']['magnific-popup']				= get_css('vendor/plugins/magnific/magnific-popup.css');
-		$this->data['stylesheets']['top']['form'] 						= get_css('assets/admin-tools/admin-forms/css/admin-forms.css');
-		$this->data['stylesheets']['top']['datatables_bootstrap'] 		= get_css('vendor/plugins/datatables/media/css/dataTables.bootstrap.css');
-		$this->data['stylesheets']['top']['datatables_plugin']			= get_css('vendor/plugins/datatables/media/css/dataTables.plugins.css');
-		$this->data['stylesheets']['top']['nestable']					= get_css('vendor/plugins/nestable/nestable.css');
-		$this->data['stylesheets']['top']['animate_css'] 				= get_css('vendor/plugins/animate/animate.min.css'); 
-		$this->data['stylesheets']['top']['lightbox_css']				= get_css('vendor/plugins/lightbox/css/lightbox.css');
-		*/
-		$this->data['stylesheets']['top']['bcs_event_compressed_css']	= get_css('assets/css/bcs_event_compressed.css');
-
-
-
-		/*$this->data['javascripts']['mid']['jquery_datatables']			= get_js('vendor/plugins/datatables/media/js/jquery.dataTables.js');*/
-		/*$this->data['javascripts']['mid']['datatables_bootstrap']		= get_js('vendor/plugins/datatables/media/js/dataTables.bootstrap.js');*/
-		/*$this->data['javascripts']['end']['pnotify']					= get_js('vendor/plugins/pnotify/pnotify.js');*/
-		/*$this->data['javascripts']['end']['moment'] 					= get_js('vendor/plugins/moment/moment.min.js');*/
-		/*$this->data['javascripts']['end']['fancytree_implementation'] 	= get_js('assets/js/bcs/event/event_tree_2.js');*/
-		/*$this->data['javascripts']['end']['nestable']				 	= get_js('vendor/plugins/nestable/jquery.nestable.js');*/
-		/*$this->data['javascripts']['end']['magnific-popup']				= get_js('vendor/plugins/magnific/jquery.magnific-popup.js');*/
-		/*$this->data['javascripts']['end']['lightbox2']					= get_js('vendor/plugins/lightbox/js/lightbox.min.js');*/
-		/*$this->data['javascripts']['end']['lazyload']					= get_js('vendor/plugins/lazyload/lazyload.min.js');*/
-		/*$this->data['javascripts']['end']['scrollstop']					= get_js('vendor/plugins/lazyload/scrollstop.min.js');*/
-
-		$this->data['javascripts']['end']['bcs_event_compressed_js']	= get_js('assets/js/bcs_event_compressed.js');
-		$this->data['javascripts']['end']['fancytree_implementation'] 	= get_js('assets/js/bcs/event/event_tree_2.js');
-		
-		$this->data['current_bcs_esd'] = $esd;
-		$this->data['current_bcs_esd_name'] = $esd_name;
-		$this->data['current_bcs_es'] = $es;
-		$this->data['current_bcs_es_name'] = $es_name;
-		
-		if (isset($this->data['current_bcs_es'])) {
-			$this->_setup_bcs_results2();
-		}
-
-		
-		
-
-		if ($cmd == 'print') {
-			$this->data['body_class'] = "blank-page sb-l-c sb-r-c mobile-view onload-check";
-			if ($show_images) {
-				$this->data['show_images']=true;
-			}
-			$subview = "event/content_view_print";
-			$mainview = "event/print_view";
-		} else {
-			$subview = "event/content_view";	
-			$mainview = "event/main_view";
-		}
-
-		
-		$this->load_structure($subview,$mainview);		
+	public function event_costs($esd = null, $es = null, $cmd = null, $show_images = null){
+		$this->_processAnEvent("costs",$esd,$es,$cmd,$show_images);
 	}
 
 	public function event_issues($esd = null, $es = null, $cmd = null, $show_images = null){
-		if (!$esd || !$es) {
-			$this->_show_401();
-		}
+		$this->_processAnEvent("issues",$esd,$es,$cmd,$show_images);
+	}
 
-		$esd_name = null;
-		$es_name = null;
+	private function _processAnEvent($page = null, $esd = null, $es = null, $cmd = null, $show_images = null){
+	    if (!$esd || !$es) {
+	      $this->_show_401();
+	    }
+
+	    $esd_name = null;
+	    $es_name = null;
 
 
-		$this->load->model('bcs_events_school_district/Mdl_bcs_events_school_district');
-		$rslt = $this->Mdl_bcs_events_school_district->get($esd);
-		if (!$rslt) {
-			$this->_show_401();
-		} else {
-			$esd_name = $rslt->school_district;
-		}
+	    $this->load->model('bcs_events_school_district/Mdl_bcs_events_school_district');
+	    $rslt = $this->Mdl_bcs_events_school_district->get($esd);
+	    if (!$rslt) {
+	      $this->_show_401();
+	    } else {
+	      $esd_name = $rslt->school_district;
+	    }
 
-		$this->load->model('bcs_events_school/Mdl_bcs_events_school');
-		$rslt = $this->Mdl_bcs_events_school->get($es);
-		if (!$rslt) {
-			$this->_show_401();
-		} else {
-			$es_name = $rslt->school_name;
-		}		
+	    $this->load->model('bcs_events_school/Mdl_bcs_events_school');
+	    $rslt = $this->Mdl_bcs_events_school->get($es);
+	    if (!$rslt) {
+	      $this->_show_401();
+	    } else {
+	      $es_name = $rslt->school_name;
+	    }   
 
-		$this->data['title'] = $esd_name . ' / ' . $es_name;
-		
-		$this->data['stylesheets']['top']['custom'] 					= get_css('assets/css/admin/custom.css');
-		$this->data['stylesheets']['top']['bcs_event_compressed_css']	= get_css('assets/css/bcs_event_compressed.css');
-		$this->data['javascripts']['end']['bcs_event_compressed_js']	= get_js('assets/js/bcs_event_compressed.js');
-		$this->data['javascripts']['end']['fancytree_implementation'] 	= get_js('assets/js/bcs/event/event_tree_2.js');
-		
-		$this->data['current_bcs_esd'] = $esd;
-		$this->data['current_bcs_esd_name'] = $esd_name;
-		$this->data['current_bcs_es'] = $es;
-		$this->data['current_bcs_es_name'] = $es_name;
-		
-		if (isset($this->data['current_bcs_es'])) {
-			$this->_setup_bcs_results_issues($cmd);
-		}
-		
-		$this->data['body_class'] = "blank-page sb-l-c sb-r-c mobile-view onload-check";
-		if ($show_images) {
-			$this->data['show_images']=true;
-		}
-		$subview = "event/content_view_print";
-		$mainview = "event/print_view";
+	    $this->data['title'] = $esd_name . ' / ' . $es_name;
+	    
+	    $this->data['stylesheets']['top']['custom']           = get_css('assets/css/admin/custom.css');
+	    $this->data['stylesheets']['top']['bcs_event_compressed_css'] = get_css('assets/css/bcs_event_compressed.css');
+	    $this->data['javascripts']['end']['bcs_event_compressed_js']  = get_js('assets/js/bcs_event_compressed.js');
+	    $this->data['javascripts']['end']['fancytree_implementation']   = get_js('assets/js/bcs/event/event_tree_2.js');
+	    
+	    $this->data['current_bcs_esd'] = $esd;
+	    $this->data['current_bcs_esd_name'] = $esd_name;
+	    $this->data['current_bcs_es'] = $es;
+	    $this->data['current_bcs_es_name'] = $es_name;
+	    
+	    if ($page == "issues") {
 
-		
-		$this->load_structure($subview,$mainview);		
+	      if (isset($this->data['current_bcs_es'])) {
+	        $this->_setup_bcs_results_issues($cmd);
+	      }     
+	      $this->data['body_class'] = "blank-page sb-l-c sb-r-c mobile-view onload-check";
+	      if ($show_images) {
+	        $this->data['show_images']=true;
+	      }
+	      $subview = "event/content_view_print";
+	      $mainview = "event/print_view";
+
+	    } else if ($page == "costs") {
+	      if (isset($this->data['current_bcs_es'])) {
+	        $this->_setup_bcs_results_costs($cmd);
+	      }
+
+	      $this->data['body_class'] = "blank-page sb-l-c sb-r-c mobile-view onload-check";
+	      if ($show_images) {
+	        $this->data['show_images']=true;
+	      }
+	      $subview = "event/content_view_print";
+	      $mainview = "event/print_view";
+	      
+	    } else {
+	      if (isset($this->data['current_bcs_es'])) {
+	        $this->_setup_bcs_results2();
+	      }
+	      if ($cmd == 'print') {
+	        $this->data['body_class'] = "blank-page sb-l-c sb-r-c mobile-view onload-check";
+	        if ($show_images) {
+	          $this->data['show_images']=true;
+	        }
+	        $subview = "event/content_view_print";
+	        $mainview = "event/print_view";
+	      } else {
+	        $subview = "event/content_view";  
+	        $mainview = "event/main_view";
+	      }
+	    }
+	    
+	    $this->load_structure($subview,$mainview);  
 	}
 
 	public function events()
@@ -251,8 +206,122 @@ class Bcs extends Authorized_Controller {
 		$this->load_structure($subview,$mainview);
 	}
 
+	private function _setup_bcs_results_costs($cmd = null){
+		//Load all the modules
+		$this->load->module('bcs_headings');
+		$this->load->module('bcs_profiles');
+		$this->load->module('bcs_profiles_school');
+		$this->load->module('bcs_profiles_school_images');
+		$this->load->module('bcs_questions');
+		$this->load->module('bcs_questions_school');
+
+		//Get all the headings
+		$headings = $this->bcs_headings->get_all();
+		
+		//Get all the system profiles
+		$profiles = $this->bcs_profiles->all();
+		//Get the system profiles count
+		$profiles_count = count($profiles);
+		
+		$this->data['title'] = $this->data['title'] . " - Expenses";
+		$this->data['current_bcs_es_name'] = $this->data['current_bcs_es_name'] . " - Expenses";
+
+		//Get all the school profiles
+		$sp = $this->bcs_profiles_school->get_all_school_profiles_array($this->data['current_bcs_es']);
+		$school_profiles = array();
+		if (isset($sp['status'])) {
+			$school_profiles_count = 0;
+		} else {
+			foreach ($sp as $value) {
+				$school_profiles[$value->profile_id][] = array('profile'=>$value,'answers'=>$this->bcs_questions_school->get_answers_by_profile_school_id_clean($value->id),'images'=>$this->bcs_profiles_school_images->get_all_images_by_profile_school_id($value->id));
+			}
+			//Get the school profiles count
+			$school_profiles_count = count($school_profiles);			
+		}
+		
+		//Use the school profile count & profile count to get the progress bar
+		$this->data['bcs_percent_complete'] =  $this->_get_progress_bar($school_profiles_count,$profiles_count,TRUE);
+		//$this->data['bcs_percent_complete'] = $sp;
+
+		//echo '<pre>';
+		//var_dump($school_profiles);
+		//echo '</pre>';
+
+
+		$bcs = array();
+		$add_p = false;
+		$add_h = false;
+
+		foreach ($headings as $heading) {
+			$heading_profiles = $this->bcs_profiles->by_heading_array($heading->id);
+			$heading_profiles_count = count($heading_profiles);
+			$heading_profiles_array = array();
+			$hsp_count = 0;
+			if (is_array($heading_profiles)) {
+				foreach ($heading_profiles as $heading_profile) {
+					$pqs = array();
+					$pqsi = array();
+					if (array_key_exists($heading_profile['key'], $school_profiles)) {
+						$hsp_count = $hsp_count + 1;
+						foreach ($school_profiles[$heading_profile['key']] as $v) {
+							array_push($pqs, $v['answers']);
+							if ($v['images']) {
+								array_push($pqsi,$v['images']);
+							}
+						}
+					}
+					$qs = $this->bcs_questions->by_profile($heading_profile['key']);
+					$qarr = array();
+					foreach ($qs as $q) {
+						if ($pqs) {
+							$pq = array();
+							foreach ($pqs as $p) {
+								if (($p) && (array_key_exists($q->id, $p))) {
+
+									if ($q->type == "Currency" && $q->kind == "capital_planning") {
+
+										$q_val_tmp = strtolower($p[$q->id]);
+										if (intval($q_val_tmp) > 0){
+													$add_p = true;
+													$add_h = true;											
+										}
+									}
+									array_push($pq,$p[$q->id]);
+								}
+							}
+							if ($pq) {
+								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>$pq);	
+							} else {
+								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none');	
+							}
+							
+						} else {
+							$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none'); 	
+						}
+						
+
+					}
+					if ($add_p == true) {
+						$heading_profiles_array[$heading_profile['title']] = array('questions'=>$qarr,'images'=>$pqsi);
+						$add_p = false;
+					}
+				}
+			}
+			if ($add_h == true) {
+				if ($hsp_count == 0) {
+					$bcs[$heading->name] = array('bar_chart'=>$this->_get_progress_bar($hsp_count,1),'profiles'=>$heading_profiles_array,'slug'=>$heading->slug);
+				} else {
+					$bcs[$heading->name] = array('bar_chart'=>$this->_get_progress_bar($hsp_count,$heading_profiles_count),'profiles'=>$heading_profiles_array,'slug'=>$heading->slug);
+				}
+				$add_h = false;
+			}
+		}
+
+
+		$this->data['bcs_headings'] = $bcs;
+	}
 	private function _setup_bcs_results_issues($cmd = null ) {
-//Load all the modules
+		//Load all the modules
 		$this->load->module('bcs_headings');
 		$this->load->module('bcs_profiles');
 		$this->load->module('bcs_profiles_school');
