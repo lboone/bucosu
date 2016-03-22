@@ -191,7 +191,7 @@
 					$ans = $rule($ans);
 					return $ans;
 			} else {
-				return implode(', ', $ans);
+				return Trim(implode(', ', $ans));
 			}
 
 	}
@@ -209,11 +209,14 @@
 
 		$cond = array(
 			'EXCELLENT'			=> 6,
+			'GOOD'				=> 6,
 			'SATISFACTORY'		=> 5,
+			'FAIR'				=> 5,
 			'UNSATISFACTORY'	=> 4,
-			'NON FUNCTIONING'	=> 3,
+			'NON FUNCTIONAL'	=> 3,
 			'FAILING'			=> 2,
 			'CRITICAL FAILURE'	=> 1,
+			'POOR'				=> 1,
 			);
 		$fin_cond = 0;
 		$fin_cond_index = '';
@@ -230,11 +233,14 @@
 	function bcs_condition_worst($answers){
 		$cond = array(
 			'EXCELLENT'			=> 1,
+			'GOOD'				=> 1,
 			'SATISFACTORY'		=> 2,
+			'FAIR'				=> 2,
 			'UNSATISFACTORY'	=> 3,
-			'NON FUNCTIONING'	=> 4,
+			'NON FUNCTIONAL'	=> 4,
 			'FAILING'			=> 5,
 			'CRITICAL FAILURE'	=> 6,
+			'POOR'				=> 6,
 			);
 		$fin_cond = 0;
 		$fin_cond_index = '';
@@ -247,5 +253,48 @@
 			}
 		}
 		return $fin_cond_index;
+	}
+
+	function bcs_yn_any_y($answers) {
+		$y_found = false;
+
+		if (is_array($answers)) {
+			foreach ($answers as $answer) {
+				if (strtolower($answer) == 'yes') {
+					$y_found = true;
+				}
+			}
+		} else {
+			if (strtolower($answers) == 'yes') {
+				$y_found = true;
+			}
+		}
+
+		if ($y_found) {
+			return 'YES';
+		} else {
+			return 'NO';
+		}
+	}
+
+	function bcs_yn_any_n($answers) {
+		$n_found = false;
+		if (is_array($answers)) {
+			foreach ($answers as $answer) {
+				if (strtolower($answer) == 'no') {
+					$n_found = true;
+				}
+			}			
+		} else {
+			if (strtolower($answers) == 'no') {
+				$n_found = true;
+			}
+		}
+
+		if ($n_found) {
+			return 'NO';
+		} else {
+			return 'YES';
+		}
 	}
 ?>
