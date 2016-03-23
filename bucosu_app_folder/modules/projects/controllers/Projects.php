@@ -129,20 +129,41 @@ class Projects extends Authorized_Controller {
 		$this->data['container_div'] = 'project_reports_container';
 		$this->data['view_edit_project'] = 'hidden';
 
+		
+
 		if (!$rpt) {	
-			$id = $this->input->post_get('rpt',TRUE);
+			$rpt = $this->input->post_get('rpt',TRUE);
 		} 
+		echo ('<pre>' . $rpt . '</pre>');
 		if (!$rpt) {
 			$this->data ['report_object'] = null;
 		} else {
+
+			switch ($rpt) {
+				case 'building_estimate':
+					$params = array('event_school_id'=>$this->session->userdata('project_school'));
+					# code...
+					break;
+				case 'district_summary':
+					$params = array('event_school_district_id'=>$this->session->userdata('project_school_district'));
+					break;
+				
+				default:
+					break;
+			}
+
+
 			$params = array('event_school_district_id'=>$this->session->userdata('project_school_district'));
 			$projs = $this->_the_model->get_by($params);
 			if ($projs) {
 
 				$this->data['report_data'] = array(
-					'report_object' 			=> $projs,
-					'project_school_district' 	=> $this->session->userdata('project_school_district'),
-					'project_school'			=> $this->session->userdata('project_school'),
+					'report_name'					=> $rpt,
+					'report_object' 				=> $projs,
+					'project_school_district' 		=> $this->session->userdata('project_school_district'),
+					'project_school_district_name'	=> $this->session->userdata('project_school_district_name'),
+					'project_school'				=> $this->session->userdata('project_school'),
+					'project_school_name'			=> $this->session->userdata('project_school_name'),
 				);
 			} else {
 				$this->data ['report_object'] = null;
