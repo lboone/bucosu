@@ -55,42 +55,35 @@
 												<tr class="info">
 													<th class="w20">#</th>
 													<th>Question</th>
-													<th class="w200">Answers</th>
+													<th class="w300">Answers</th>
 												</tr>
 											</thead>
 											<tbody>
 												<?php $nbr = 1;?>
 												<?php foreach ($value2 as  $key3 =>$value3): ?>
+													<?php $question = $value3; ?>
 													<tr>
 														<td><?php echo $nbr; ?></td>
 														<td><?php echo $value3['text']; ?></td>
-														<?php if (is_array($value3['answers'])): ?>
-															<?php $an = array(); ?>
-															<?php foreach ($value3['answers'] as $ans): ?>
-																<?php if (is_array($ans)): ?>
-																	<?php foreach ($ans as $a): ?>
-																		<?php if (is_numeric($a)): ?>
-																			<?php if ( intval($a) !== 0): ?>
-																				<?php array_push($an, $a); ?>		
-																			<?php endif ?>
-																		<?php else: ?>
-																			<?php array_push($an, strtoupper(str_replace("_"," ",$a))); ?>	
-																		<?php endif ?>
-																	<?php endforeach ?>
-																<?php else: ?>
-																	<?php if (is_numeric($ans)): ?>
-																		<?php if ( intval($ans) !== 0): ?>
-																			<?php array_push($an, $ans); ?>		
-																		<?php endif ?>
-																	<?php else: ?>
-																		<?php array_push($an, strtoupper(str_replace("_"," ",$ans))); ?>	
-																	<?php endif ?>
-																<?php endif ?>
-																
-															<?php endforeach ?>
-															<!-- <td><?php //echo implode('<br />', array_unique($an)); ?></td> -->
-															<?php if (!is_array_numeric($an)) { $an = array_keys(array_flip($an)); }?>
-															<td><?php echo implode('<br />', $an); ?></td>
+														<?php $answers = $question['answers']; ?>
+														<?php if (is_array($answers)): ?>
+															<td><?php echo process_answers(array('answers'=>$answers,'type'=>$question['q_type'],'rule'=>$question['q_rule_report'],'custom'=>$question['q_rule_custom'])); ?>
+																<?php 
+																	if(isset($question['descs'])){
+																		
+																		if(is_array($question['descs'])){
+
+																			if($question['descs'][0] != null){
+																				echo('<br /><small><em>' . $question['descs'][0] . '</em></small>');
+																			}
+																		} else {
+																			if($question['descs'] != null && $question['descs'] != "none") {
+																				echo('<br /><small><em>' . $question['descs'] . '</em></small>');
+																			}
+																		}
+																	} 
+																?>
+															</td>															
 														<?php else: ?>
 															<td></td>
 														<?php endif ?>
@@ -194,5 +187,159 @@
 			return true;
 		}
 		return false;
+	}
+
+
+	function process_answers($answers_to_process){
+		$all_answers 	= $answers_to_process['answers'];
+		$type 			= $answers_to_process['type'];
+		$rule 			= $answers_to_process['rule'];
+		$custom 		= $answers_to_process['custom'];
+
+		$ans = array();
+		foreach ($all_answers as $key => $answers) {
+			if (is_array($answers)) {
+				foreach ($answers as $answer) {
+					if (is_numeric($answer)) {
+						$found = false;
+
+						if ( (($type == 'Multi' || $type == 'Single') && intval($answer) == 0) ) {
+							$found = true;
+						}
+						if (!$found) {
+							array_push($ans,$answer);
+						}
+					} else {
+						array_push($ans,strtoupper(str_replace("_"," ",$answer)));
+					}
+				}	
+			} else {
+				if (is_numeric($answers)) {
+					$found = false;
+					if ( (($type == 'Multi' || $type == 'Single') && intval($answers) == 0) ) {
+						$found = true;
+					}
+					if (!$found) {
+						array_push($ans,$answers);
+					}
+				} else {
+					array_push($ans,strtoupper(str_replace("_"," ",$answers)));
+				}
+			}
+		}
+		
+
+		if (!is_array_numeric($ans)) { $ans = array_keys(array_flip($ans));}
+
+			if ($rule && function_exists("bcs_" . $rule)) {
+				$rule = "bcs_".$rule;
+					$ans = $rule($ans);
+					return $ans;
+			} else {
+				return Trim(implode(', ', $ans));
+			}
+
+	}
+
+	function bcs_sum($answers){
+		return array_sum($answers);
+	}
+	function bcs_max($answers){
+		return max($answers);
+	}
+	function bcs_min($answers){
+		return min($answers);
+	}
+	function bcs_condition_best($answers){
+
+		$cond = array(
+			'EXCELLENT'			=> 6,
+			'GOOD'				=> 6,
+			'SATISFACTORY'		=> 5,
+			'FAIR'				=> 5,
+			'UNSATISFACTORY'	=> 4,
+			'NON FUNCTIONAL'	=> 3,
+			'FAILING'			=> 2,
+			'CRITICAL FAILURE'	=> 1,
+			'POOR'				=> 1,
+			);
+		$fin_cond = 0;
+		$fin_cond_index = '';
+
+		foreach ($answers as $answer) {
+			$cur_cond = $cond[$answer];
+			if ($cur_cond > $fin_cond) {
+				$fin_cond = $cur_cond;
+				$fin_cond_index = $answer;
+			}
+		}
+		return $fin_cond_index;
+	}
+	function bcs_condition_worst($answers){
+		$cond = array(
+			'EXCELLENT'			=> 1,
+			'GOOD'				=> 1,
+			'SATISFACTORY'		=> 2,
+			'FAIR'				=> 2,
+			'UNSATISFACTORY'	=> 3,
+			'NON FUNCTIONAL'	=> 4,
+			'FAILING'			=> 5,
+			'CRITICAL FAILURE'	=> 6,
+			'POOR'				=> 6,
+			);
+		$fin_cond = 0;
+		$fin_cond_index = '';
+
+		foreach ($answers as $answer) {
+			$cur_cond = $cond[$answer];
+			if ($cur_cond > $fin_cond) {
+				$fin_cond = $cur_cond;
+				$fin_cond_index = $answer;
+			}
+		}
+		return $fin_cond_index;
+	}
+
+	function bcs_yn_any_y($answers) {
+		$y_found = false;
+
+		if (is_array($answers)) {
+			foreach ($answers as $answer) {
+				if (strtolower($answer) == 'yes') {
+					$y_found = true;
+				}
+			}
+		} else {
+			if (strtolower($answers) == 'yes') {
+				$y_found = true;
+			}
+		}
+
+		if ($y_found) {
+			return 'YES';
+		} else {
+			return 'NO';
+		}
+	}
+
+	function bcs_yn_any_n($answers) {
+		$n_found = false;
+		if (is_array($answers)) {
+			foreach ($answers as $answer) {
+				if (strtolower($answer) == 'no') {
+					$n_found = true;
+				}
+			}			
+		} else {
+			if (strtolower($answers) == 'no') {
+				$n_found = true;
+			}
+		}
+
+		if ($n_found) {
+			return 'NO';
+		} else {
+			return 'YES';
+		}
 	}
 ?>
