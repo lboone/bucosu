@@ -127,7 +127,7 @@ class Bcs extends Authorized_Controller {
 	      
 	    } else {
 	      if (isset($this->data['current_bcs_es'])) {
-	        $this->_setup_bcs_results2();
+	      	$this->_setup_bcs_results2();
 	      }
 	      if ($cmd == 'print') {
 	        $this->data['body_class'] = "blank-page sb-l-c sb-r-c mobile-view onload-check";
@@ -145,6 +145,15 @@ class Bcs extends Authorized_Controller {
 	    $this->load_structure($subview,$mainview);  
 	}
 
+	function _load_modules(){
+	    $this->load->module('bcs_headings');
+	    $this->load->module('bcs_profiles');
+	    $this->load->module('bcs_profiles_school');
+	    $this->load->module('bcs_profiles_school_images');
+	    $this->load->module('bcs_questions');
+	    $this->load->module('bcs_questions_school');
+	}
+
 	public function events()
 	{	
 		if (intval($this->session->userdata('user_group_type')) > 2) //This is a area of the site that only admins & firms should see.
@@ -153,38 +162,7 @@ class Bcs extends Authorized_Controller {
 		}
 
 		$this->data['stylesheets']['top']['custom'] 					= get_css('assets/css/admin/custom.css');
-		/*$this->data['stylesheets']['top']['magnific-popup']				= get_css('vendor/plugins/magnific/magnific-popup.css');*/
-		/*$this->data['stylesheets']['top']['form'] 						= get_css('assets/admin-tools/admin-forms/css/admin-forms.css');*/
-		/*$this->data['stylesheets']['top']['fancytree'] 					= get_css('vendor/plugins/fancytree/skin-win8/ui.fancytree.min.css'); */
-		/*$this->data['stylesheets']['top']['date_time_picker'] 			= get_css('vendor/plugins/datepicker/css/bootstrap-datetimepicker.css');*/
-		/*$this->data['stylesheets']['top']['datatables_bootstrap'] 		= get_css('vendor/plugins/datatables/media/css/dataTables.bootstrap.css');
-		$this->data['stylesheets']['top']['datatables_plugin']			= get_css('vendor/plugins/datatables/media/css/dataTables.plugins.css');*/
-		/*$this->data['stylesheets']['top']['fileinput']					= get_css('vendor/plugins/fileinput/fileinput.min.css');*/
-		/*$this->data['stylesheets']['top']['select2']					= get_css('vendor/plugins/select2/css/core.css');*/
-		/*$this->data['stylesheets']['top']['nestable']					= get_css('vendor/plugins/nestable/nestable.css');
-		$this->data['stylesheets']['top']['lightbox_css']				= get_css('vendor/plugins/lightbox/css/lightbox.css');*/
-
 		$this->data['stylesheets']['top']['bcs_events_compressed_css']	= get_css('assets/css/bcs_events_compressed.css');
-
-
-		/*$this->data['javascripts']['mid']['jquery_datatables']			= get_js('vendor/plugins/datatables/media/js/jquery.dataTables.js');
-		$this->data['javascripts']['mid']['datatables_bootstrap']		= get_js('vendor/plugins/datatables/media/js/dataTables.bootstrap.js');
-		$this->data['javascripts']['end']['pnotify']					= get_js('vendor/plugins/pnotify/pnotify.js');*/
-		/*$this->data['javascripts']['end']['fancytree'] 					= get_js('vendor/plugins/fancytree/jquery.fancytree-all.min.js');*/
-		/*$this->data['javascripts']['end']['fancytree_filter'] 			= get_js('vendor/plugins/fancytree/extensions/jquery.fancytree.filter.js');*/
-		/*$this->data['javascripts']['end']['moment'] 					= get_js('vendor/plugins/moment/moment.min.js');*/
-		/*$this->data['javascripts']['end']['form_validation'] 			= get_js('assets/admin-tools/admin-forms/js/jquery.validate.min.js');*/
-		/*$this->data['javascripts']['end']['form_validation_additioinal']= get_js('assets/admin-tools/admin-forms/js/additional-methods.min.js');*/
-		/*$this->data['javascripts']['end']['fileinput'] 					= get_js('vendor/plugins/fileinput/fileinput.min.js');*/
-		/*$this->data['javascripts']['end']['fancytree_implementation'] 	= get_js('assets/js/bcs/event/event_tree.js');*/
-		/*$this->data['javascripts']['end']['select2']				 	= get_js('vendor/plugins/select2/select2.min.js');*/
-		/*$this->data['javascripts']['end']['nestable']				 	= get_js('vendor/plugins/nestable/jquery.nestable.js');
-		$this->data['javascripts']['end']['magnific-popup']				= get_js('vendor/plugins/magnific/jquery.magnific-popup.js');
-		$this->data['javascripts']['end']['lightbox2']					= get_js('vendor/plugins/lightbox/js/lightbox.min.js');
-		$this->data['javascripts']['end']['lazyload']					= get_js('vendor/plugins/lazyload/lazyload.min.js');
-		$this->data['javascripts']['end']['scrollstop']					= get_js('vendor/plugins/lazyload/scrollstop.min.js');*/
-
-
 		$this->data['javascripts']['end']['bcs_events_compressed_js']	= get_js('assets/js/bcs_events_compressed.js');
 		$this->data['javascripts']['end']['fancytree_implementation'] 	= get_js('assets/js/bcs/event/event_tree.js');
 
@@ -196,7 +174,6 @@ class Bcs extends Authorized_Controller {
 		
 
 		//$this->_setup_bcs_results();
-
 		$this->data['event_tree'] = $this->load_view('event/event_tree',$this->data,TRUE);
 		$this->data['tray_left'] = $this->load_view('event/tray_left',$this->data,TRUE);
 
@@ -208,12 +185,7 @@ class Bcs extends Authorized_Controller {
 
 	private function _setup_bcs_results_costs($cmd = null){
 		//Load all the modules
-		$this->load->module('bcs_headings');
-		$this->load->module('bcs_profiles');
-		$this->load->module('bcs_profiles_school');
-		$this->load->module('bcs_profiles_school_images');
-		$this->load->module('bcs_questions');
-		$this->load->module('bcs_questions_school');
+		$this->_load_modules();
 
 		//Get all the headings
 		$headings = $this->bcs_headings->get_all();
@@ -223,8 +195,8 @@ class Bcs extends Authorized_Controller {
 		//Get the system profiles count
 		$profiles_count = count($profiles);
 		
-		$this->data['title'] = $this->data['title'] . " - Expenses";
-		$this->data['current_bcs_es_name'] = $this->data['current_bcs_es_name'] . " - Expenses";
+		$this->data['title'] = $this->data['title'] . " - Estimated Cost";
+		$this->data['current_bcs_es_name'] = $this->data['current_bcs_es_name'] . " - Estimated Cost";
 
 		//Get all the school profiles
 		$sp = $this->bcs_profiles_school->get_all_school_profiles_array($this->data['current_bcs_es']);
@@ -233,7 +205,12 @@ class Bcs extends Authorized_Controller {
 			$school_profiles_count = 0;
 		} else {
 			foreach ($sp as $value) {
-				$school_profiles[$value->profile_id][] = array('profile'=>$value,'answers'=>$this->bcs_questions_school->get_answers_by_profile_school_id_clean($value->id),'images'=>$this->bcs_profiles_school_images->get_all_images_by_profile_school_id($value->id));
+
+				$school_profiles[$value->profile_id][] = array(
+										'profile'=>$value,
+										'answers'=>$this->bcs_questions_school->get_answers_by_profile_school_id_clean($value->id),
+										'images'=>$this->bcs_profiles_school_images->get_all_images_by_profile_school_id($value->id),
+										'descs'=>$this->bcs_questions_school->get_answer_description_by_profile_school_id_clean($value->id));
 			}
 			//Get the school profiles count
 			$school_profiles_count = count($school_profiles);			
@@ -241,12 +218,6 @@ class Bcs extends Authorized_Controller {
 		
 		//Use the school profile count & profile count to get the progress bar
 		$this->data['bcs_percent_complete'] =  $this->_get_progress_bar($school_profiles_count,$profiles_count,TRUE);
-		//$this->data['bcs_percent_complete'] = $sp;
-
-		//echo '<pre>';
-		//var_dump($school_profiles);
-		//echo '</pre>';
-
 
 		$bcs = array();
 		$add_p = false;
@@ -261,10 +232,12 @@ class Bcs extends Authorized_Controller {
 				foreach ($heading_profiles as $heading_profile) {
 					$pqs = array();
 					$pqsi = array();
+					$pqsd = array();
 					if (array_key_exists($heading_profile['key'], $school_profiles)) {
 						$hsp_count = $hsp_count + 1;
 						foreach ($school_profiles[$heading_profile['key']] as $v) {
 							array_push($pqs, $v['answers']);
+							array_push($pqsd, $v['descs']);
 							if ($v['images']) {
 								array_push($pqsi,$v['images']);
 							}
@@ -289,14 +262,21 @@ class Bcs extends Authorized_Controller {
 									array_push($pq,$p[$q->id]);
 								}
 							}
+							$pqd = array();
+							foreach ($pqsd as $pd) {
+								if (($pd) && (array_key_exists($q->id,$pd))) {
+									array_push($pqd,$pd[$q->id]);
+								}
+							}
+
 							if ($pq) {
-								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>$pq);	
+								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>$pq,'descs'=>$pqd);	
 							} else {
-								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none');	
+								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none','descs'=>'none');	
 							}
 							
 						} else {
-							$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none'); 	
+							$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none','descs'=>'none'); 	
 						}
 						
 
@@ -322,12 +302,7 @@ class Bcs extends Authorized_Controller {
 	}
 	private function _setup_bcs_results_issues($cmd = null ) {
 		//Load all the modules
-		$this->load->module('bcs_headings');
-		$this->load->module('bcs_profiles');
-		$this->load->module('bcs_profiles_school');
-		$this->load->module('bcs_profiles_school_images');
-		$this->load->module('bcs_questions');
-		$this->load->module('bcs_questions_school');
+		$this->_load_modules();
 
 		//Get all the headings
 		$headings = $this->bcs_headings->get_all();
@@ -344,7 +319,11 @@ class Bcs extends Authorized_Controller {
 			$school_profiles_count = 0;
 		} else {
 			foreach ($sp as $value) {
-				$school_profiles[$value->profile_id][] = array('profile'=>$value,'answers'=>$this->bcs_questions_school->get_answers_by_profile_school_id_clean($value->id),'images'=>$this->bcs_profiles_school_images->get_all_images_by_profile_school_id($value->id));
+				$school_profiles[$value->profile_id][] = array(
+										'profile'=>$value,
+										'answers'=>$this->bcs_questions_school->get_answers_by_profile_school_id_clean($value->id),
+										'images'=>$this->bcs_profiles_school_images->get_all_images_by_profile_school_id($value->id),
+										'descs'=>$this->bcs_questions_school->get_answer_description_by_profile_school_id_clean($value->id));
 			}
 			//Get the school profiles count
 			$school_profiles_count = count($school_profiles);			
@@ -373,9 +352,11 @@ class Bcs extends Authorized_Controller {
 				foreach ($heading_profiles as $heading_profile) {
 					$pqs = array();
 					$pqsi = array();
+					$pqsd = array();
 					if (array_key_exists($heading_profile['key'], $school_profiles)) {
 						$hsp_count = $hsp_count + 1;
 						foreach ($school_profiles[$heading_profile['key']] as $v) {
+							array_push($pqsd, $v['descs']);
 							array_push($pqs, $v['answers']);
 							if ($v['images']) {
 								array_push($pqsi,$v['images']);
@@ -460,14 +441,22 @@ class Bcs extends Authorized_Controller {
 									array_push($pq,$p[$q->id]);
 								}
 							}
+
+							$pqd = array();
+							foreach ($pqsd as $pd) {
+								if (($pd) && (array_key_exists($q->id,$pd))) {
+									array_push($pqd,$pd[$q->id]);
+								}
+							}
+
 							if ($pq) {
-								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>$pq);	
+								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>$pq,'descs'=>$pqd);	
 							} else {
-								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none');	
+								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none','descs'=>'none');	
 							}
 							
 						} else {
-							$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none'); 	
+							$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none','descs'=>'none'); 	
 						}
 						
 
@@ -494,12 +483,7 @@ class Bcs extends Authorized_Controller {
 
 	private function _setup_bcs_results2(){
 		//Load all the modules
-		$this->load->module('bcs_headings');
-		$this->load->module('bcs_profiles');
-		$this->load->module('bcs_profiles_school');
-		$this->load->module('bcs_profiles_school_images');
-		$this->load->module('bcs_questions');
-		$this->load->module('bcs_questions_school');
+		$this->_load_modules();
 
 		//Get all the headings
 		$headings = $this->bcs_headings->get_all();
@@ -516,7 +500,11 @@ class Bcs extends Authorized_Controller {
 			$school_profiles_count = 0;
 		} else {
 			foreach ($sp as $value) {
-				$school_profiles[$value->profile_id][] = array('profile'=>$value,'answers'=>$this->bcs_questions_school->get_answers_by_profile_school_id_clean($value->id),'images'=>$this->bcs_profiles_school_images->get_all_images_by_profile_school_id($value->id));
+				$school_profiles[$value->profile_id][] = array(
+										'profile'=>$value,
+										'answers'=>$this->bcs_questions_school->get_answers_by_profile_school_id_clean($value->id),
+										'images'=>$this->bcs_profiles_school_images->get_all_images_by_profile_school_id($value->id),
+										'descs'=>$this->bcs_questions_school->get_answer_description_by_profile_school_id_clean($value->id));
 			}
 			//Get the school profiles count
 			$school_profiles_count = count($school_profiles);			
@@ -541,10 +529,12 @@ class Bcs extends Authorized_Controller {
 				foreach ($heading_profiles as $heading_profile) {
 					$pqs = array();
 					$pqsi = array();
+					$pqsd = array();
 					if (array_key_exists($heading_profile['key'], $school_profiles)) {
 						$hsp_count = $hsp_count + 1;
 						foreach ($school_profiles[$heading_profile['key']] as $v) {
 							array_push($pqs, $v['answers']);
+							array_push($pqsd, $v['descs']);
 							if ($v['images']) {
 								array_push($pqsi,$v['images']);
 							}
@@ -560,14 +550,20 @@ class Bcs extends Authorized_Controller {
 									array_push($pq,$p[$q->id]);
 								}
 							}
+							$pqd = array();
+							foreach ($pqsd as $pd) {
+								if (($pd) && (array_key_exists($q->id,$pd))) {
+									array_push($pqd,$pd[$q->id]);
+								}
+							}
 							if ($pq) {
-								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>$pq);	
+								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>$pq,'descs'=>$pqd);	
 							} else {
-								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none');	
+								$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none','descs'=>'none');	
 							}
 							
 						} else {
-							$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none'); 	
+							$qarr[$q->id]=array('text'=>$q->text,'q_type'=>$q->type,'q_rule_report'=>$q->rule_report,'q_rule_custom'=>$q->rule_report_custom,'answers'=>'none','descs'=>'none'); 	
 						}
 						
 

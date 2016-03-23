@@ -10,7 +10,7 @@
 	            <div class="row mb10 mt10">
 	              <div class="col-md-12">
 	                <div class="pull-left">
-	                  <h1 class="lh10 mt10"><?php if (isset($current_bcs_es_name)) { echo $current_bcs_es_name;} else {echo 'School'; } ?></h1>
+	                  <h3 class="lh10 mt10"><?php if (isset($current_bcs_es_name)) { echo $current_bcs_es_name;} else {echo 'School'; } ?></h3>
 	                  <h5 class="mn"><?php if (isset($current_bcs_esd_name)) { echo $current_bcs_esd_name;} else {echo 'School District'; } ?></h5>
 	                </div>
 	              </div>
@@ -46,7 +46,23 @@
 														<td class="w300"><?php echo $question['text']; ?></td>
 														<?php $answers = $question['answers']; ?>
 														<?php if (is_array($answers)): ?>
-															<td><?php echo process_answers(array('answers'=>$answers,'type'=>$question['q_type'],'rule'=>$question['q_rule_report'],'custom'=>$question['q_rule_custom'])); ?></td>
+															<td><?php echo process_answers(array('answers'=>$answers,'type'=>$question['q_type'],'rule'=>$question['q_rule_report'],'custom'=>$question['q_rule_custom'])); ?>
+																<?php 
+																	if(isset($question['descs'])){
+																		
+																		if(is_array($question['descs'])){
+
+																			if($question['descs'][0] != null){
+																				echo('<br /><small><em>' . $question['descs'][0] . '</em></small>');
+																			}
+																		} else {
+																			if($question['descs'] != null && $question['descs'] != "none") {
+																				echo('<br /><small><em>' . $question['descs'] . '</em></small>');
+																			}
+																		}
+																	} 
+																?>
+															</td>
 														<?php else: ?>
 															<td></td>
 														<?php endif ?>

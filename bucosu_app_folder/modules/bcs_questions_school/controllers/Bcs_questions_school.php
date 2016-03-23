@@ -57,6 +57,33 @@ class Bcs_questions_school extends Authorized_Controller {
 		return $qs;
 	}
 
+	public function get_answer_description_by_profile_school_id_clean($id = NULL,$descs=NULL){
+		if (!$id) {
+			return false;
+		}
+
+		$this->mdl_bcs_questions_school->set_table('v_bcs_questions_school_answers');
+		$this->mdl_bcs_questions_school->set_order_by('q_order, alpha');
+		$params = array('profile_school_id'=>$id);
+		$rslts = $this->mdl_bcs_questions_school->get_by($params);
+
+		$this->mdl_bcs_questions_school->set_table('bcs_questions_school');
+		$this->mdl_bcs_questions_school->set_order_by('question_id');
+
+		if (!$rslts) {
+			return false;
+		}
+		foreach ($rslts as $value) {
+			if (isset($descs[$value->id]) && is_array($descs[$value->id])) {
+				array_push($descs[$value->id],$value->description);
+			} else {
+				$descs[$value->id] = $value->description;
+			}
+		}
+
+		return $descs;
+	}
+
 	public function get_question_school_results_for_project($id){
 		if (!$id) {
 			return null;
