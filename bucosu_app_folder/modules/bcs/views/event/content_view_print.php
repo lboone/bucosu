@@ -2,8 +2,20 @@
 	<?php if (isset($bcs_headings)): ?>
 		<div class="row">
 			<div class="col-md-12">
-				<button id="bcs_event_back_button" class="btn btn-primary hidden hidden-print mr20"><i class="fa fa-angle-double-left"></i> Back To Dashboard</button>
-				<button id="bcs_event_print_page_button" class="btn btn-success hidden hidden-print"><i class="fa fa-print"></i> Print Event Document</button>
+				<button id="bcs_event_back_button" class="btn btn-primary hidden hidden-print mr5"><i class="fa fa-angle-double-left"></i> Back To Dashboard</button>
+				<button id="bcs_event_print_page_button" class="btn btn-success hidden hidden-print mr5"><i class="fa fa-print"></i> Print Event Document</button>
+				<?php 
+					$current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+					if ((isset($show_images)) && ($show_images == true)) {
+						$string = explode("/", $current_url);
+						array_pop($string);
+						$current_url = implode("/", $string);
+						echo('<a class="btn btn-danger hidden-print" href="' . rtrim($current_url,'/') . '" role="button"><i class="fa fa-square-o"></i> Hide Images</a>');
+					} else {
+						echo('<a class="btn btn-alert hidden-print" href="' . $current_url . '/images" role="button"><i class="fa fa-check-square-o"></i> Show Images</a>');
+					}
+
+				?>
 			</div>
 
 			<div class="col-md-12" id="invoice-item">

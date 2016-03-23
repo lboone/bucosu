@@ -12,7 +12,7 @@ jQuery(document).ready(function(){
     });
 
     $(document).on('click','#bcs_event_print_button', function(){
-        window.location.href = window.location.href + "/print";
+        window.location.href = window.location.href + "/print/images";
     });
 
     $(document).on('click','#bcs_event_print_page_button', function(){
