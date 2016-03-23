@@ -134,7 +134,6 @@ class Projects extends Authorized_Controller {
 		if (!$rpt) {	
 			$rpt = $this->input->post_get('rpt',TRUE);
 		} 
-		echo ('<pre>' . $rpt . '</pre>');
 		if (!$rpt) {
 			$this->data ['report_object'] = null;
 		} else {
