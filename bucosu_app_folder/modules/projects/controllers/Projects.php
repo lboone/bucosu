@@ -134,6 +134,7 @@ class Projects extends Authorized_Controller {
 		if (!$rpt) {	
 			$rpt = $this->input->post_get('rpt',TRUE);
 		} 
+
 		if (!$rpt) {
 			$this->data ['report_object'] = null;
 		} else {
@@ -151,8 +152,6 @@ class Projects extends Authorized_Controller {
 					break;
 			}
 
-
-			$params = array('event_school_district_id'=>$this->session->userdata('project_school_district'));
 			$projs = $this->_the_model->get_by($params);
 			if ($projs) {
 
