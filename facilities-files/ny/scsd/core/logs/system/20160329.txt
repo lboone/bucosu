@@ -1,0 +1,113 @@
+===========================================================
+2016-03-29 22:29:55 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-29 22:29:55 - Array
+(
+    [Error Msg] => Undefined index: submitme
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/login.html
+    [Line Number] => 24
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-29 22:30:10 - Array
+(
+    [Error Msg] => Undefined variable: totalActive
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 48
+    [Error Type] => E_NOTICE
+)
+
+2016-03-29 22:30:10 - Array
+(
+    [Error Msg] => Undefined variable: totalTrash
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 52
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-29 22:30:10 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 522
+    [Error Type] => E_NOTICE
+)
+
+2016-03-29 22:30:10 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 830
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-29 22:31:43 - *** WARNING *** Array
+(
+    [Error Msg] => file_get_contents(https://mfscripts.com/_script_internal/cloudable.php?ref=http%3A%2F%2Fff.ny.scsd.bucosu.com): failed to open stream: Operation timed out
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/core/includes/coreFunctions.class.php
+    [Line Number] => 165
+    [Error Type] => E_WARNING
+)
+
+===========================================================
+2016-03-29 22:34:09 - Array
+(
+    [Error Msg] => Undefined index: css_code
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/admin/settings.php
+    [Line Number] => 43
+    [Error Type] => E_NOTICE
+)
+
+2016-03-29 22:34:09 - Array
+(
+    [Error Msg] => Undefined variable: themeId
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/admin/settings.php
+    [Line Number] => 270
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-29 22:35:39 - Array
+(
+    [Error Msg] => Undefined index: css_code
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/admin/settings.php
+    [Line Number] => 43
+    [Error Type] => E_NOTICE
+)
+
+2016-03-29 22:35:39 - *** WARNING *** Array
+(
+    [Error Msg] => unlink(/Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/core/cache/themes/cloudable/custom_css.css): No such file or directory
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/admin/settings.php
+    [Line Number] => 134
+    [Error Type] => E_WARNING
+)
+
+===========================================================
+2016-03-29 22:35:39 - Array
+(
+    [Error Msg] => Undefined variable: themeId
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/admin/settings.php
+    [Line Number] => 270
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-29 22:37:10 - *** WARNING *** Array
+(
+    [Error Msg] => file_get_contents(https://mfscripts.com/_script_internal/cloudable.php?ref=http%3A%2F%2Fff.ny.scsd.bucosu.com): failed to open stream: Operation timed out
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/core/includes/coreFunctions.class.php
+    [Line Number] => 165
+    [Error Type] => E_WARNING
+)
+

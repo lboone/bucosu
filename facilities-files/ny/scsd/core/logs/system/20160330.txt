@@ -1,0 +1,203 @@
+===========================================================
+2016-03-30 01:02:42 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 01:02:42 - Array
+(
+    [Error Msg] => Undefined variable: totalActive
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 48
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 01:02:42 - Array
+(
+    [Error Msg] => Undefined variable: totalTrash
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 52
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 01:02:42 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 522
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 01:02:42 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 830
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 01:02:50 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 01:02:50 - Array
+(
+    [Error Msg] => Undefined index: submitme
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/login.html
+    [Line Number] => 24
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 01:03:29 - Array
+(
+    [Error Msg] => Undefined variable: totalActive
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 48
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 01:03:29 - Array
+(
+    [Error Msg] => Undefined variable: totalTrash
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 52
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 01:03:29 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 522
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 01:03:29 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 830
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 01:04:41 - *** WARNING *** Array
+(
+    [Error Msg] => file_get_contents(https://mfscripts.com/_script_internal/cloudable.php?ref=http%3A%2F%2Fff.ny.scsd.bucosu.com): failed to open stream: Operation timed out
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/core/includes/coreFunctions.class.php
+    [Line Number] => 165
+    [Error Type] => E_WARNING
+)
+
+===========================================================
+2016-03-30 14:11:49 - Array
+(
+    [Error Msg] => Undefined index: username
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/admin/login.php
+    [Line Number] => 32
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 14:11:55 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 14:11:55 - Array
+(
+    [Error Msg] => Undefined index: submitme
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/login.html
+    [Line Number] => 24
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 14:12:29 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 14:12:29 - Array
+(
+    [Error Msg] => Undefined index: submitme
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/login.html
+    [Line Number] => 24
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:02:01 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:02:01 - Array
+(
+    [Error Msg] => Undefined index: submitme
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/login.html
+    [Line Number] => 24
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:02:13 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:02:13 - Array
+(
+    [Error Msg] => Undefined index: submitme
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/login.html
+    [Line Number] => 24
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:02:14 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:02:14 - Array
+(
+    [Error Msg] => Undefined index: submitme
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/login.html
+    [Line Number] => 24
+    [Error Type] => E_NOTICE
+)
+
