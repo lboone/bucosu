@@ -253,3 +253,347 @@
     [Error Type] => E_NOTICE
 )
 
+===========================================================
+2016-03-30 15:23:41 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:23:41 - Array
+(
+    [Error Msg] => Undefined variable: totalActive
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 48
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 15:23:41 - Array
+(
+    [Error Msg] => Undefined variable: totalTrash
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 52
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:23:41 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 522
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 15:23:41 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 830
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:30:59 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:30:59 - Array
+(
+    [Error Msg] => Undefined variable: totalActive
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 48
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 15:30:59 - Array
+(
+    [Error Msg] => Undefined variable: totalTrash
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 52
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:30:59 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 522
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 15:30:59 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 830
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:58:13 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:58:13 - Array
+(
+    [Error Msg] => Undefined variable: totalActive
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 48
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 15:58:13 - Array
+(
+    [Error Msg] => Undefined variable: totalTrash
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 52
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 15:58:13 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 522
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 15:58:13 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 830
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:01:24 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:01:24 - Array
+(
+    [Error Msg] => Undefined variable: totalActive
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 48
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 16:01:24 - Array
+(
+    [Error Msg] => Undefined variable: totalTrash
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 52
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:01:24 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 522
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 16:01:24 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 830
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:01:37 - Array
+(
+    [Error Msg] => Undefined variable: totalActive
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 48
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 16:01:37 - Array
+(
+    [Error Msg] => Undefined variable: totalTrash
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 52
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:01:37 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 522
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 16:01:37 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 830
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:01:42 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:01:42 - Array
+(
+    [Error Msg] => Undefined index: submitme
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/login.html
+    [Line Number] => 24
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:01:57 - Array
+(
+    [Error Msg] => Undefined variable: file
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/index.html
+    [Line Number] => 69
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:01:57 - Array
+(
+    [Error Msg] => Undefined index: submitme
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/login.html
+    [Line Number] => 24
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:02:18 - Array
+(
+    [Error Msg] => Undefined variable: totalActive
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 48
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 16:02:18 - Array
+(
+    [Error Msg] => Undefined variable: totalTrash
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 52
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:02:18 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 522
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 16:02:18 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 830
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:04:21 - Array
+(
+    [Error Msg] => Undefined variable: totalActive
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 48
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 16:04:21 - Array
+(
+    [Error Msg] => Undefined variable: totalTrash
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 52
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:04:21 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 522
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 16:04:21 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 830
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:05:33 - Array
+(
+    [Error Msg] => Undefined variable: totalActive
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 48
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 16:05:33 - Array
+(
+    [Error Msg] => Undefined variable: totalTrash
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/partial/_account_home_javascript.inc.php
+    [Line Number] => 52
+    [Error Type] => E_NOTICE
+)
+
+===========================================================
+2016-03-30 16:05:33 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 522
+    [Error Type] => E_NOTICE
+)
+
+2016-03-30 16:05:33 - Array
+(
+    [Error Msg] => Trying to get property of non-object
+    [File] => /Applications/MAMP/htdocs/bucosu/facilities-files/ny/scsd/themes/cloudable/templates/ajax/_load_album.ajax.php
+    [Line Number] => 830
+    [Error Type] => E_NOTICE
+)
+

@@ -683,5 +683,36 @@ class Bcs extends Authorized_Controller {
 	}
 
 //alert("key: " + node.key + " - title: " + node.title + " - current school: " + cs );
+
+
+
+
+	function facilities_data(){
+	    $prompt_msg = "This link will navigate you away from bucosu.com, are you sure?";
+	    $name = $this->prompt($prompt_msg);
+	    if ($name = 'true') {
+	    	echo("<script type='text/javascript'> window.location = 'http://bucosu.com/logout'; window.location = 'http://fd.ny.scsd.bucosu.com'; </script>");
+	    }
+	}
+	function facilities_files(){
+	    $prompt_msg = "This link will navigate you away from bucosu.com, are you sure?";
+	    $name = $this->prompt($prompt_msg);
+	    if ($name = 'true') {
+	    	echo("<script type='text/javascript'> window.location = 'http://bucosu.com/logout'; window.location = 'http://ff.ny.scsd.bucosu.com'; </script>");
+	    }
+	}
+
+
+
+	  //prompt function
+    function prompt($prompt_msg){
+        echo("<script type='text/javascript'> var answer = confirm('".$prompt_msg."'); </script>");
+
+        $answer = "<script type='text/javascript'> document.write(answer); </script>";
+        return($answer);
+    }
+
+    //program
+
 }
 
